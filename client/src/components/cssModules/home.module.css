@@ -1,0 +1,17 @@
+.container{
+    background-color: #1b1b1b;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container1{
+    width: 100%;
+}
+
+
+.container2{
+    width: 98.5vw;
+    display: flex;
+}

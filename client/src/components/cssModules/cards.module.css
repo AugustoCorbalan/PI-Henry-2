@@ -1,0 +1,10 @@
+.container{
+    background-color: #222222;
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(84, 84, 84);
+    border-top-left-radius: 50px;
+}

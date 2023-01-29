@@ -11,18 +11,21 @@ module.exports = (sequelize) => {
       primaryKey: true,
     },
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(100),
       allowNull: false,
+    },
+    image: {
+      type: DataTypes.STRING
     },
     resume:{
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1500),
       allowNull: false,
     },
-    healtScore: {
+    healthScore: {
       type: DataTypes.INTEGER
     },
     steps: {
-      type: DataTypes.STRING
+      type: DataTypes.JSON
     }
 
   });

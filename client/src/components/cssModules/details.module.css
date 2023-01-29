@@ -1,0 +1,166 @@
+body{
+    background-color: #1b1b1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background-color:  rgb(22, 22, 22);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container h1{
+    color:rgb(236, 236, 236);
+}
+.subContainer{
+    background-color:#1b1b1b;
+    width: 95%;
+    margin-top: 25px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    border: 1px solid  rgb(84, 84, 84);
+}
+
+.subContainer1{
+    background-color: #1b1b1b;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-around;
+    align-items:flex-start;
+}
+
+.subContainer1 img{
+    width: 60%;
+    border-radius: 10px;
+    border: 2px solid rgb(84, 84, 84);
+}
+.subContainer2{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+
+}
+
+.subContainer3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 2px solid rgb(84, 84, 84);
+}
+
+.subContainer3 span{
+    color: rgb(236, 236, 236);
+    font-size:xx-large;
+}
+
+.subContainer3 h3{
+    margin: 0px;
+    font-size:medium;
+}
+
+.subContainer3 li{
+    color: rgb(236, 236, 236);
+}
+
+.subContainer4{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 93%;
+    height: 80%;
+    border-radius: 10px;
+    border: 2px solid rgb(84, 84, 84);
+    padding: 20px;
+    padding-top: 0px;
+    margin: 20px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    word-wrap: break-word;
+
+}
+
+.subContainer4 h3{
+    font-size:medium;
+}
+.subContainer4 span{
+    color: rgb(236, 236, 236);
+    word-wrap:break-word;
+}
+
+.subContainer5{
+    display: flex;
+    flex-wrap: wrap;
+    height: 80%;
+    width: 96.5%;
+    padding-top: 0px;
+    border-radius: 10px;
+    border: 2px solid rgb(84, 84, 84);
+    margin: 20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+
+}
+
+.subContainer5 h3{
+    font-size:medium;
+    margin-left: 15px;
+}
+.subContainer5 span{
+    color: rgb(236, 236, 236);
+}
+
+.containerPasos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 15px;
+    border-top: 2px solid rgb(84, 84, 84);
+}
+
+.containerTitle{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    color: rgb(236, 236, 236)
+}
+.containerTitle h4{
+    margin: 2px;
+}
+.containerText{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+.containerIngredientes{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(236, 236, 236);
+}
+
+.containerIngredientes h4{
+    margin: 2px;
+}
+
+.containerIngredientes ul{
+    margin: 2px;
+    width:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

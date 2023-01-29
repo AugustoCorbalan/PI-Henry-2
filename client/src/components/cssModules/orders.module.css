@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    border: 2px solid rgb(84, 84, 84);
+    border-radius: 10px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+.subContainer{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    align-self: center;
+    font-size: medium;
+    font-style: italic;
+    color:rgb(236, 236, 236)
+}
+
+h3{
+    align-self: center;
+    font-size:small;
+    font-style: italic;
+    color:rgb(236, 236, 236)
+}
+
+.styleButtonOn{
+    background-color: rgb(199, 27, 27);
+    width: 20%;
+    height: 27px;
+    border: 0px;
+    border-radius:5px;
+    margin: 2px;
+    color:rgb(236, 236, 236)
+}
+
+.styleButtonOff{
+    background-color: rgb(84, 84, 84);
+    width: 20%;
+    height: 27px;
+    border: 0px;
+    border-radius:5px;
+    margin: 2px;
+    color:rgb(236, 236, 236)
+}

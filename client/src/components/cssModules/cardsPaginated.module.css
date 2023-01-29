@@ -1,0 +1,29 @@
+.container{
+    width: 100%;
+}
+.container1{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 button{
+    background-color: rgb(84, 84, 84);
+    width: 10%;
+    height: 27px;
+    border: 0px;
+    border-radius:5px;
+    margin: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color:rgb(236, 236, 236)
+}
