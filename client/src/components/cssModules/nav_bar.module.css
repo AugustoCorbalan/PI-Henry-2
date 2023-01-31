@@ -1,0 +1,24 @@
+.container{
+    background-color: rgba(22, 22, 22, 0.29);
+    width: 100%;
+    height: 5vh;
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+
+.navLink{
+    background-color: rgba(84, 84, 84, 0.692);
+    width: 80px;
+    height: 23px;
+    border: 0px;
+    border-radius:2px;
+    margin: 2px;
+    margin-left: 35px;
+    color:rgb(236, 236, 236);
+    text-decoration: none;
+}

@@ -3,17 +3,22 @@ import { Route } from 'react-router-dom'
 import React from 'react';
 
 import { InitialPage } from './components/reactModules/initialPage.jsx';
-import { Home } from './components/reactModules/home.jsx';
+import { Home } from './components/reactModules/home/home.jsx';
 import { Detail } from './components/reactModules/detail/detail.jsx';
-import { NewRecipe} from './components/reactModules/newRecipe/newRecipe.jsx'
+import { NewRecipe} from './components/reactModules/newRecipe/newRecipe.jsx';
+import { Nav_bar } from './components/reactModules/nav_bar/nav_bar';
 
 function App() {
   return (
     <div className="App">
       <Route exact path='/' component={InitialPage}/>
       <Route exact path='/home' component={Home}/>
-      <Route exact path='/detail/:id' render={()=> <Detail/>}/>
+      <Route exact path='/detail/:id'>
+        <Nav_bar/>
+        <Detail/>
+      </Route>
       <Route exact path ='/newRecipe'>
+        <Nav_bar/>
         <NewRecipe/>
       </Route>
     </div>

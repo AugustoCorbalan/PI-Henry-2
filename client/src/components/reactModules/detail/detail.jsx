@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecipesById, cleanDetail } from "../../../Redux/actions.js"
-
 import style from "../../cssModules/details.module.css";
 
 export const Detail=(props)=>{
@@ -18,7 +17,20 @@ export const Detail=(props)=>{
             dispatch(cleanDetail())
         )
         },[])
-    console.log(details)
+
+    useEffect(()=>{
+        
+        if(Object.entries(details).length>0){
+            stringTohtml(details.summary)
+        }
+        },[details])
+
+    function stringTohtml(text){
+        const $description = document.querySelector(".description");
+        $description.innerHTML = text;
+        return $description;
+    }
+
     if(Object.entries(details).length==0) return <></>;
     return(
         <>
@@ -50,7 +62,7 @@ export const Detail=(props)=>{
                     </div>
                     <div className={style.subContainer4}>
                         <h3>Descripción: </h3>
-                        <span>{details.summary}</span>
+                        <span className="description"/>
                     </div>
                     <div className={style.subContainer5}>
                         <div>

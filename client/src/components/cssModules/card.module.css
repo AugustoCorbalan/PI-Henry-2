@@ -2,8 +2,6 @@
     width: 40vw;
     height: 40vh;
     border-radius: 10px;
-    border-top-left-radius: 30px;
-    /* border-bottom-right-radius: 50px; */
     border: 2px solid rgb(84, 84, 84);
     margin: 8px;
     margin-top: 20px;
@@ -13,6 +11,8 @@
 
 .container:hover{
     background-color: #333333;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .container h1{
