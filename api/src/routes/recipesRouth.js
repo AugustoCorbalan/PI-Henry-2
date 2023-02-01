@@ -37,18 +37,18 @@ router.get('/:id', async(req, res)=>{
 
 router.post('/', async (req, res)=>{
    const data= req.body;
-   try {
+
         if(data){
-            await createRecipe(data);
-            res.status(200).send("Receta creada con exito");
+            try {
+                await createRecipe(data);
+                res.status(200).send("Receta creada con exito");    
+            } catch (error) {
+                res.status(400).send(error.message)
+            }    
         }
         else{
             res.status(400).send("No se proporcionaron los datos necesarios")
         }
-    
-   } catch (error) {
-        res.status(400).send(error.message)
-   }
 })
 
 module.exports= router;

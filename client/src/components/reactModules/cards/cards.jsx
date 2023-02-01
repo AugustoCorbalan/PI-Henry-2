@@ -13,13 +13,13 @@ export const Cards=(props)=>{
     useEffect(()=>{
         dispatch(getRecipes());
     },[])
-
     
-    return(
+    return( Array.isArray(recipes)?
         <>
             <div className={styles.container}>
                 <CardsFilter recipes= {recipes}/>
             </div>
         </>
+        : <div className={styles.message}><p>{recipes}</p></div>
     )
 }

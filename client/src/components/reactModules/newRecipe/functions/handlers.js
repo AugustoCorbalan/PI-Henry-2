@@ -26,8 +26,17 @@ export const handlers=(id, value, form, setForm, error, setError)=>{
         setError({...error, step: {...error.step, ingredients: validateIngredients(value)}});
     }
     if(id=="diet"){
-        let diets= [...form.diets, value];
-        setForm({...form, diets: diets});
+        if(form.diets.includes(value)){
+            let diets= [...form.diets];
+            diets=diets.filter((el)=> el!=value )   
+            setForm({...form, diets: diets});
+        }
+        else{
+            let diets=[...form.diets]
+            diets.push(value)
+            setForm({...form, diets: diets});
+        }
+        
     }
     if(id=="pasoSig"){
         if(error.step.step=="" && error.step.ingredients==""){

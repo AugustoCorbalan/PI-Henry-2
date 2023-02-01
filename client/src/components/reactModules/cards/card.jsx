@@ -4,7 +4,7 @@ import styles from '../../cssModules/card.module.css';
 
 
 export const Card=({ props })=>{
-    console.log(props)
+
     return(
         <>
             <NavLink to={`detail/${props.id}`} className={styles.navLink}>

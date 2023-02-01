@@ -21,8 +21,8 @@ export const CardsPaginated=( {props} )=>{
     };
 
     const list = recipes.slice(limit, limit+9);
-
-    return(
+    
+    return( list.length?
         <>  
         <div className={styles.container}>
             <div className={styles.container1}>
@@ -36,5 +36,6 @@ export const CardsPaginated=( {props} )=>{
         </div>
             
         </>
+        : <> <span> No se encontraron coincidencias con filtros</span></>
     )
 }

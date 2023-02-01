@@ -3,15 +3,18 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { handlers } from "./functions/handlers.js";
 import { selectClass } from "./functions/selectClass.js";
-import { postRecipe, getDiets } from "../../../Redux/actions";
+import { postRecipe, getDiets, cleanResultPost} from "../../../Redux/actions";
 import styles from "../../cssModules/newRecipe.module.css";
 
 export const NewRecipe= (props)=>{
     const dispatch= useDispatch();
     const diets = useSelector((state)=>state.diets);
-
+    const postResult = useSelector((state)=>state.postResult);
     useEffect(()=>{
         dispatch(getDiets());
+        return(
+            dispatch(cleanResultPost())
+        )
     },[])
 
     const [ form, setForm ] = useState({
@@ -19,6 +22,7 @@ export const NewRecipe= (props)=>{
         image:"",
         resume:"",
         healthScore: "",
+        tiempo: "",
         diets:[],
         step: {step: "", ingredients:""},
         steps: {steps:[]}
@@ -36,18 +40,10 @@ export const NewRecipe= (props)=>{
     const submitHandler=(evento)=>{
         evento.preventDefault();
         dispatch(postRecipe(form));
-        setForm({
-            title:"",
-            image:"",
-            resume:"",
-            healthScore: "",
-            diets:[],
-            step: {step: "", ingredients:""},
-            steps: {steps:[]}
-        })
     };
-
     return(
+        postResult.length ? <div className={styles.message}><span key="postResult">{postResult}</span></div> :
+
         <div className={styles.container}>
             <div className={styles.subContainer}>
                 <h1>Ingrese los datos de la receta: </h1>
@@ -102,6 +98,15 @@ export const NewRecipe= (props)=>{
                                             </div>
                                         )
                                     })}
+                                </div>
+                                <div className={styles.errores}>
+                                    <span id="ErrorTitle" className={selectClass("ErrorTitle", error)}>{`Nombre: ${error.title}`}</span>
+                                    <span id="ErrorImage" className={selectClass("ErrorImage", error)}>{`Imagen: ${error.image}`}</span>
+                                    <span id="ErrorHealthScore" className={selectClass("ErrorHealthScore", error)}>{`Salub.: ${error.healthScore}`}</span>
+                                    <span id="ErrorResume" className={selectClass("ErrorResume", error)}>{`Resumen: ${error.resume}`}</span>
+                                    <span id="ErrorStep" className={selectClass("ErrorStep", error)}>{`Instrucciones: ${error.step.step}`}</span>
+                                    <span id="ErrorIngredients" className={selectClass("ErrorIngredients", error)}>{`Ingredientes: ${error.step.ingredients}`}</span>
+                                    
                                 </div>
                             </div>
                         </div>

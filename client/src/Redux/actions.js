@@ -8,6 +8,7 @@ export const FILTER_DIET = "FILTER_DIET";
 export const ORDER_ALFABETIC = "ORDER_ALFABETIC";
 export const ORDER_SALUB = "ORDER_SALUB";
 export const POST_RECIPE = "POST_RECIPE"; 
+export const CLEAN_RESULTPOST = "CLEAN_RESULTPOST"
 
 export const getRecipes=(name)=>{
     return async function(dispatch){
@@ -35,7 +36,15 @@ export const getDiets=()=>{
 
 export const postRecipe=(data)=>{
     return async function(dispatch){
-        await axios.post(`http://localhost:3001/recipes`, data);
+        const result = await axios.post(`http://localhost:3001/recipes`, data);
+        const message= result.data;
+        dispatch({type:POST_RECIPE, payload: message })
+    }
+}
+
+export const cleanResultPost=()=>{
+    return function(dispatch){
+        dispatch({type: CLEAN_RESULTPOST})
     }
 }
 

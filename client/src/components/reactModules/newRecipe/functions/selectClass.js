@@ -13,6 +13,13 @@ export const selectClass=(id, error, form)=>{
     if(id=="submit") return(
         checkData(error, form) ? styles.submitOk : styles.submitError
     );
+
+    if(id=="ErrorTitle") return(error.title=="" ? styles.errorMessageNone : styles.errorMessage);
+    if(id=="ErrorImage") return(error.image=="" ? styles.errorMessageNone : styles.errorMessage);
+    if(id=="ErrorHealthScore") return(error.healthScore=="" ? styles.errorMessageNone : styles.errorMessage);
+    if(id=="ErrorResume") return(error.resume=="" ? styles.errorMessageNone : styles.errorMessage);
+    if(id=="ErrorStep") return(error.step.step=="" ? styles.errorMessageNone : styles.errorMessage)
+    if(id=="ErrorIngredients") return(error.step.ingredients=="" ? styles.errorMessageNone : styles.errorMessage);
 }
 
 
@@ -31,14 +38,18 @@ function checkStep(error, form){
 
 function checkData(error, form){
     const checkDataError=(error)=>{
-        const {title, image, healtScore, resume} = error;
-        if(title=="",image=="",healtScore=="",resume=="") return true;
+        const {title, image, healthScore, resume} = error;
+        if(title=="" && image=="" && healthScore=="" && resume==""){ 
+            return true
+        };
         return false;
     }
     const checkDataForm=(form)=>{
-        const {title, image, healtScore, resume, diets, steps}= form
-        if(title!="",image!="",healtScore!="",resume!="", diets.length!=0, steps.length!=0) return true;
+        const {title, image, healthScore, resume, diets, steps}= form
+        if(title!="" && image!="" && healthScore!="" && resume!="" && diets.length!=0 && steps.steps.length!=0){
+            return true
+            };
         return false;
     }
-    return (checkDataError(error)&&checkDataForm(form))? true : false
+    return (checkDataError(error)&&checkDataForm(form))? true : false;
 }
