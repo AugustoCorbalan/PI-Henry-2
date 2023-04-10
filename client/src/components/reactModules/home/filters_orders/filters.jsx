@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDiets, filterByDiet } from '../../../../Redux/actions';
+import { getDiets, filterByDiet, origenRecipe} from '../../../../Redux/actions';
 import styles from '../../../cssModules/filters.module.css';
 
 
@@ -44,6 +44,10 @@ export const Filters=(props)=>{
         }
     }
 
+    const handlerOrigen=(data)=>{
+        return dispatch(origenRecipe(data))
+    }
+
     return(
         <>
             <div className={styles.container}>
@@ -56,6 +60,13 @@ export const Filters=(props)=>{
                 })}
               
             </div>
+            {/* <div className={styles.container}>
+                <h2>Origen:</h2>
+                <button onClick={()=>handlerOrigen("api")} >API</button>
+                <button onClick={()=>handlerOrigen("db")} >DB</button>
+                
+              
+            </div> */}
         </>
     )
 }

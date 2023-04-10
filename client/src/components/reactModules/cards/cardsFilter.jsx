@@ -6,6 +6,7 @@ import { CardsOrder } from './cardsOrder.jsx'
 export const CardsFilter=(props)=>{
     let  listRecipes = props.recipes;
     const arrayFilterDiets = useSelector((state)=>state.filterByDiets);
+    const origen = useSelector((state)=>state.origen);
     
     if(arrayFilterDiets.length){
         for(let i=0; i<arrayFilterDiets.length; i++){
@@ -19,6 +20,14 @@ export const CardsFilter=(props)=>{
         }  
     }
 
+    if(origen.length){
+        if(origen=="api"){
+            listRecipes= listRecipes.filter((el)=> Number.isInteger(el.id))
+        }
+        else{
+            listRecipes= listRecipes.filter((el)=> !Number.isInteger(el.id))
+        }
+    }
 
     return(
         <>

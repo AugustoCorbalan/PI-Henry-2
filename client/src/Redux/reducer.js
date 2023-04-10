@@ -1,4 +1,4 @@
-import { GET_RECIPES,POST_RECIPE, CLEAN_RESULTPOST, GET_DIETS, FILTER_DIET, ORDER_ALFABETIC, ORDER_SALUB, GET_DETAIL, CLEAN_DETAIL} from "./actions";
+import { GET_RECIPES,POST_RECIPE, CLEAN_RESULTPOST, ORIGEN_RECIPE, GET_DIETS, FILTER_DIET, ORDER_ALFABETIC, ORDER_SALUB, GET_DETAIL, CLEAN_DETAIL} from "./actions";
 
 const initialState={
     recipes: [],
@@ -7,7 +7,8 @@ const initialState={
     filterByDiets: [],
     orderAlfabetic: "",
     orderSalub:"",
-    postResult:""
+    postResult:"",
+    origen:""
 };
 
 const rootReducer=(state= initialState, action)=>{
@@ -52,6 +53,11 @@ const rootReducer=(state= initialState, action)=>{
                 return{
                     ...state,
                     postResult: action.payload
+                }
+            case ORIGEN_RECIPE:
+                return{
+                    ...state,
+                    origen: action.payload
                 }
             case CLEAN_RESULTPOST:
                 return{

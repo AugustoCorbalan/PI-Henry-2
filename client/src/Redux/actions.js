@@ -8,7 +8,8 @@ export const FILTER_DIET = "FILTER_DIET";
 export const ORDER_ALFABETIC = "ORDER_ALFABETIC";
 export const ORDER_SALUB = "ORDER_SALUB";
 export const POST_RECIPE = "POST_RECIPE"; 
-export const CLEAN_RESULTPOST = "CLEAN_RESULTPOST"
+export const CLEAN_RESULTPOST = "CLEAN_RESULTPOST";
+export const ORIGEN_RECIPE = "ORIGEN_RECIPE";
 
 export const getRecipes=(name)=>{
     return async function(dispatch){
@@ -51,6 +52,12 @@ export const cleanResultPost=()=>{
 export const cleanDetail=()=>{
     return function(dispatch){
         dispatch({type: CLEAN_DETAIL, payload: {}})
+    }
+}
+
+export const origenRecipe=(data)=>{
+    return function(dispatch){
+        dispatch({type:ORIGEN_RECIPE, payload: data})
     }
 }
 

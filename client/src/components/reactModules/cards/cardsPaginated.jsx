@@ -5,8 +5,16 @@ import styles from '../../cssModules/cardsPaginated.module.css';
 
 
 export const CardsPaginated=( {props} )=>{
-    const recipes= props;
+    const recipes = props;
     const [limit, setLimit] = useState(0);
+    const arrayPages = (()=>{
+        const cantPages = Math.ceil(recipes.length/9);
+        const array=[];
+        for(let i=1; i<=cantPages; i++){
+            array.push(i)
+        }
+        return array;
+    })()
     
     const handlerClickAnterior= ()=>{
         if(limit-9 >= 0){
@@ -20,6 +28,10 @@ export const CardsPaginated=( {props} )=>{
         }
     };
 
+    const handlerClickNumberPage= (numberPage)=>{
+        setLimit(9*(numberPage-1))
+    }
+
     const list = recipes.slice(limit, limit+9);
     
     return( list.length?
@@ -30,6 +42,14 @@ export const CardsPaginated=( {props} )=>{
             </div>
         
             <div className={styles.container2}>
+                <div className={styles.buttonsPages}>
+                    { arrayPages.map((el)=>{
+                        return  <button onClick={()=>handlerClickNumberPage(el)}>
+                                    {el}
+                                </button>
+                        })
+                    }
+                </div>
                 <button onClick={()=>handlerClickAnterior()}>Anterior</button>
                 <button onClick={()=>handlerClickSiguiente()}>Siguiente</button>
             </div>
