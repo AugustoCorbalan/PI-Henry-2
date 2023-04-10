@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Card } from './card.jsx'
 import styles from '../../cssModules/cardsPaginated.module.css';
@@ -7,6 +7,7 @@ import styles from '../../cssModules/cardsPaginated.module.css';
 export const CardsPaginated=( {props} )=>{
     const recipes = props;
     const [limit, setLimit] = useState(0);
+
     const arrayPages = (()=>{
         const cantPages = Math.ceil(recipes.length/9);
         const array=[];
@@ -33,7 +34,7 @@ export const CardsPaginated=( {props} )=>{
     }
 
     const list = recipes.slice(limit, limit+9);
-    
+    console.log(limit/9)
     return( list.length?
         <>  
         <div className={styles.container}>
@@ -44,14 +45,14 @@ export const CardsPaginated=( {props} )=>{
             <div className={styles.container2}>
                 <div className={styles.buttonsPages}>
                     { arrayPages.map((el)=>{
-                        return  <button onClick={()=>handlerClickNumberPage(el)}>
+                        return  <button onClick={()=>handlerClickNumberPage(el)} className={(limit/9 === (el-1))? styles.buttonSelect : styles.buttonNoSelect}>
                                     {el}
                                 </button>
                         })
                     }
                 </div>
-                <button onClick={()=>handlerClickAnterior()}>Anterior</button>
-                <button onClick={()=>handlerClickSiguiente()}>Siguiente</button>
+                <button onClick={()=>handlerClickAnterior()} className={styles.buttonsPaginated}>Anterior</button>
+                <button onClick={()=>handlerClickSiguiente()} className={styles.buttonsPaginated}>Siguiente</button>
             </div>
         </div>
             
