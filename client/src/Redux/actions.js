@@ -13,7 +13,7 @@ export const ORIGEN_RECIPE = "ORIGEN_RECIPE";
 
 export const getRecipes=(name)=>{
     return async function(dispatch){
-        const infoServer= await axios.get(`http://localhost:3001/recipes?name=${name || "" }`)
+        const infoServer= await axios.get(`/recipes?name=${name || "" }`)
         const data= infoServer.data;
         dispatch({type: GET_RECIPES, payload: data})
     }
@@ -21,7 +21,7 @@ export const getRecipes=(name)=>{
 
 export const getRecipesById=(id)=>{
     return async function(dispatch){
-        const infoServer= await axios.get(`http://localhost:3001/recipes/${id}`)
+        const infoServer= await axios.get(`/recipes/${id}`)
         const data= infoServer.data;
         dispatch({type: GET_DETAIL, payload: data})
     }
@@ -29,7 +29,7 @@ export const getRecipesById=(id)=>{
 
 export const getDiets=()=>{
     return async function(dispatch){
-        const infoServer= await axios.get(`http://localhost:3001/diets`);
+        const infoServer= await axios.get(`/diets`);
         const data= infoServer.data;
         dispatch({type: GET_DIETS, payload: data})
     }
@@ -37,7 +37,7 @@ export const getDiets=()=>{
 
 export const postRecipe=(data)=>{
     return async function(dispatch){
-        const result = await axios.post(`http://localhost:3001/recipes`, data);
+        const result = await axios.post(`/recipes`, data);
         const message= result.data;
         dispatch({type:POST_RECIPE, payload: message })
     }

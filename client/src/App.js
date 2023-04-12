@@ -7,6 +7,9 @@ import { Home } from './components/reactModules/home/home.jsx';
 import { Detail } from './components/reactModules/detail/detail.jsx';
 import { NewRecipe} from './components/reactModules/newRecipe/newRecipe.jsx';
 import { Nav_bar } from './components/reactModules/nav_bar/nav_bar';
+import axios from 'axios';
+
+axios.defaults.baseURL= "http://localhost:3001";
 
 function App() {
   return (
