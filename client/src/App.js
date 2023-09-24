@@ -9,7 +9,7 @@ import { NewRecipe} from './components/reactModules/newRecipe/newRecipe.jsx';
 import { Nav_bar } from './components/reactModules/nav_bar/nav_bar';
 import axios from 'axios';
 
-axios.defaults.baseURL= "https://pi-henry-2-production.up.railway.app";
+axios.defaults.baseURL= "https://api.render.com/deploy/srv-ck7l97o8elhc738j5jcg?key=S30Cmojb7-s";
 
 function App() {
   return (
